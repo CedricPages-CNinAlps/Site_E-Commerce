@@ -1,4 +1,5 @@
 <?php
+include("functions.php");
 $list_products = [
     [
         "Nom" => "Article_1",
@@ -31,19 +32,8 @@ $list_products = [
 <body>
 
 <?php
-for ($i = 0; $i < count($list_products); $i++) {
-    $list = $list_products[$i];
-?>
-
-<div class="card" style="width: 18rem;">
-    <img src="<?= $list["Photo"]?>" class="card-img-top" alt="<?= $list["Nom"]?>">
-    <div class="card-body">
-        <h5 class="card-title"><?= $list["Nom"]?></h5>
-        <a href="#" class="btn btn-primary"><?= $list["Prix"]?></a>
-    </div>
-</div>
-
-<?php
+foreach ($list_products as $product){
+displayItem($product["Nom"],$product["Prix"],$product["Photo"]);
 }
 ?>
 
