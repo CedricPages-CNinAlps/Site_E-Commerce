@@ -50,9 +50,9 @@ function displayItem3(){
 ?>
 
 <?php
-function displayItem($Nom,$Prix,$Photo){
+function displayItem($Nom,$Prix,$Photo){ //fonction avec les 3 paramètres
 ?>
-        <div class="card" style="width: 18rem;">
+        <div class="card" style="width: 18rem;"> <!--bloc produit issue html Bootsrap-->
             <img src="<?= $Photo ?>" class="card-img-top" alt="<?= $Nom?>">
             <div class="card-body">
                 <h5 class="card-title"><?= $Nom?></h5>
@@ -60,5 +60,5 @@ function displayItem($Nom,$Prix,$Photo){
             </div>
         </div>
 <?php
-}
+} //fermeture de la fonction en incluant l'HTML
 ?>

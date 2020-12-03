@@ -1,5 +1,5 @@
 <?php
-include("functions.php");
+include("functions.php"); //Appel le fichier Functions.php
 $list_products = [
     [
         "Nom" => "Article_1",
@@ -32,8 +32,8 @@ $list_products = [
 <body>
 
 <?php
-foreach ($list_products as $product){
-displayItem($product["Nom"],$product["Prix"],$product["Photo"]);
+foreach ($list_products as $product){ //Boucle faisant appel au tableau et lui disant qu'il contient des produits
+displayItem($product["Nom"],$product["Prix"],$product["Photo"]); //Nous appelons la fonction avec les paramètres des produits
 }
 ?>
 
