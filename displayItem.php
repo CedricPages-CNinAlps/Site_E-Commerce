@@ -26,8 +26,9 @@ else {
 // Testons si le fichier a bien été envoyé et s'il n'y a pas d'erreur
 if (isset($_FILES['image']) AND $_FILES['image']['error'] == 0)
 {
+
     // Testons si le fichier n'est pas trop gros
-    if ($_FILES['image']['size'] <= 1000000)
+    if ($_FILES['image']['size'] <= 10000000)
     {
         // Testons si l'extension est autorisée
         $infosfichier = pathinfo($_FILES['image']['name']);
@@ -36,7 +37,7 @@ if (isset($_FILES['image']) AND $_FILES['image']['error'] == 0)
         if (in_array($extension_upload, $extensions_autorisees))
         {
             // On peut valider le fichier et le stocker définitivement
-            move_uploaded_file($_FILES['image']['tmp_name'], 'PHP/' . basename($_FILES['image']['name']));
+            move_uploaded_file($_FILES['image']['tmp_name'], "C:\Users\Arthemis\Desktop" . basename($_FILES['image']['name']));
             echo "L'envoi a bien été effectué !";
 
         }
