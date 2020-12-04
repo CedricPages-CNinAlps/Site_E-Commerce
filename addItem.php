@@ -13,10 +13,14 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="displayItem.php" method="POST">
-        <label>Nom du produit : <input type="text" name="nom"></label>
-        <label>Prix du produit : <input type="number" name="prix"></label>
-        <input type="submit">
+    <form action="displayItem.php" method="POST" enctype="multipart/form-data">
+        <p>
+            Formulaire d'envoi d'une photo :<br />
+            <label>Nom du produit : <input type="text" name="nom"></label>
+            <label>Prix du produit : <input type="number" name="prix"></label>
+            <input type="file" name="image" /><br />
+            <input type="submit" value="Envoyer le formulaire avec l'image" />
+        </p>
     </form>
 </body>
 </html>
