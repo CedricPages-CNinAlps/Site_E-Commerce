@@ -17,7 +17,8 @@ if (!empty($_POST["nom"]) AND !empty($_POST["prix"]) AND $_POST["prix"]>0){
     echo "Le nom du produit est " . htmlspecialchars($_POST["nom"]) . " et il est au prix de ". htmlspecialchars($_POST["prix"]);
     }
 else {
-    echo 'Merci de completer tous les champs et/ou de mettre un prix supérieur à 0 !';
+    header('Location:http://localhost/Projet_boutique/addItem.php?isError=true');
+    exit();
     }
 ?>
 <br>
@@ -35,8 +36,9 @@ if (isset($_FILES['image']) AND $_FILES['image']['error'] == 0)
         if (in_array($extension_upload, $extensions_autorisees))
         {
             // On peut valider le fichier et le stocker définitivement
-            move_uploaded_file($_FILES['image']['tmp_name'], 'uploads/' . basename($_FILES['image']['name']));
+            move_uploaded_file($_FILES['image']['tmp_name'], 'PHP/' . basename($_FILES['image']['name']));
             echo "L'envoi a bien été effectué !";
+
         }
     }
 }
