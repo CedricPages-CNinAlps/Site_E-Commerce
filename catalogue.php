@@ -33,8 +33,8 @@ $list_products = [
 <body class="bg-light">
 <div class="container">
     <div class="py-5 text-center">
-        <h2>Ajouter un nouveau produit au catalogue</h2>
-        <p class="lead">Pour ajouter un nouveau produit merci de suivre les étape suivantes :</p>
+        <h2>Notre nouveau catalogue</h2>
+        <p class="lead">Retrouvez tous nos meilleurs produits</p>
     </div>
 
     <div class="row">
@@ -48,6 +48,7 @@ displayItem($product["Nom"],$product["Prix"],$product["Photo"]); //Nous appelons
 
         </div>
     </div>
+</div>
 
     <?php include("addItem_V2.php"); ?>
 
