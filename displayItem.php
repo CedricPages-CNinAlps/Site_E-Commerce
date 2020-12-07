@@ -1,4 +1,13 @@
 <?php
+$valider = '';
+// Testons si le nom est complété ainsi que le prix et que le prix est supérieur à 0
+if (!empty($_POST["nom"]) AND !empty($_POST["prix"]) AND $_POST["prix"]>0){
+    $valider = "Le nom du produit est " . htmlspecialchars($_POST["nom"]) . " et il est au prix de ". htmlspecialchars($_POST["prix"]);
+}
+else {
+    header('Location:http://localhost/addItem.php?isError=true');
+    exit();
+}
 ?>
 
 <!doctype html>
@@ -11,16 +20,7 @@
     <title>Document</title>
 </head>
 <body>
-<?php
-// Testons si le nom est complété ainsi que le prix et que le prix est supérieur à 0
-if (!empty($_POST["nom"]) AND !empty($_POST["prix"]) AND $_POST["prix"]>0){
-    echo "Le nom du produit est " . htmlspecialchars($_POST["nom"]) . " et il est au prix de ". htmlspecialchars($_POST["prix"]);
-    }
-else {
-    header('Location:http://localhost/Projet_boutique/addItem.php?isError=true');
-    exit();
-    }
-?>
+<?= $valider ?>
 <br>
 <?php
 // Testons si le fichier a bien été envoyé et s'il n'y a pas d'erreur

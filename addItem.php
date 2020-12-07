@@ -2,7 +2,6 @@
 if (isset($_GET['isError']) && $_GET['isError']==true){
     echo 'Merci de completer tous les champs et/ou de mettre un prix supérieur à 0 !';
 }
-
 ?>
 
 <!doctype html>
