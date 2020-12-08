@@ -60,9 +60,11 @@ function displayItem($Nom,$Prix,$Photo){ //fonction avec les 3 paramètres
                         <img src="<?php echo $Photo ?>" class="card-img-top" width="100%" height="225" alt=<?php echo $Nom ?> >
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $Nom ?></h5>
+                            <h5 class="card-title"><?php echo $Prix ?></h5>
+                            <input type="checkbox" name="option1" value="oui"> <label for="">Ajouter au panier</label>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <a href="#" class="btn btn-primary"><?php echo $Prix ?></a>
+                                    <a href="#" class="btn btn-primary">Voir mon panier</a>
                                 </div>
                             </div>
                         </div>

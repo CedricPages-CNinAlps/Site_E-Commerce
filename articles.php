@@ -40,6 +40,7 @@ $Article_3 = [
                     <img src="<?php echo $Article_1["Photo"] ?>" class="card-img-top" height="225" alt=<?php echo $Article_1["Nom"] ?> >
                     <div class="card-body">
                         <h5 class="card-title"><?php echo $Article_1["Nom"] ?></h5>
+
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
                                 <a href="#" class="btn btn-primary"><?php echo $Article_1["Prix"] ?></a>
