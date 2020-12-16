@@ -1,22 +1,5 @@
 <?php
 include("functions.php"); //Appel le fichier Functions.php
-$list_products = [
-    [
-        "Nom" => "Article_1",
-        "Prix" => 10 . " €" ,
-        "Photo" => "img/images.jpg"
-    ],
-    [
-        "Nom" => "Article_2",
-        "Prix" => 15 . " €" ,
-        "Photo" => "img/102336.jpg"
-    ],
-    [
-        "Nom" => "Article_3",
-        "Prix" => 20 . " €" ,
-        "Photo" => "img/Nain_medite.jpg"
-    ]
-];
 ?>
 
 <!doctype html>
@@ -40,11 +23,16 @@ $list_products = [
     <div class="row">
         <div class="col-md-4 shadow-sm">
 
-<?php
-foreach ($list_products as $product){ //Boucle faisant appel au tableau et lui disant qu'il contient des produits
-displayItem($product["Nom"],$product["Prix"],$product["Photo"]); //Nous appelons la fonction avec les paramètres des produits
-}
-?>
+            <form action="basket.php" method="POST" enctype="multipart/form-data">  <!--Déclaration de mon form-->
+                <?php
+                foreach ($list_products as $index => $product){ //Boucle faisant appel au tableau et lui disant qu'il contient des produits
+                    displayItem($product["nom"],$product["prix"],$product["photo"],$index); //Nous appelons la fonction avec les paramètres des produits
+                }
+                ?>
+                <div class="btn-group">
+                    <button class="btn btn-primary" type="submit">Voir mon panier</button>
+                </div>
+            </form>
 
         </div>
     </div>
