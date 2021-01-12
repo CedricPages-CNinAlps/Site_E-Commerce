@@ -14,6 +14,21 @@ $list_products = [
         "nom" => "Article_3",
         "prix" => 20 . " €" ,
         "photo" => "img/Nain_medite.jpg"
+    ],
+    [
+        "nom" => "Article_1",
+        "prix" => 10 . " €" ,
+        "photo" => "img/images.jpg"
+    ],
+    [
+        "nom" => "Article_2",
+        "prix" => 15 . " €" ,
+        "photo" => "img/102336.jpg"
+    ],
+    [
+        "nom" => "Article_3",
+        "prix" => 20 . " €" ,
+        "photo" => "img/Nain_medite.jpg"
     ]
 ];
 

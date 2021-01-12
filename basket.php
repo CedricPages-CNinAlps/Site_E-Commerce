@@ -20,11 +20,27 @@
         <div class="col-md-4 shadow-sm">
 
             <?php
-            include ("functions.php");
+            include "functions.php";
+            global $list_products;
+
             // var_dump($_POST);   //-----------> Affiche le table des données post
             // var_dump($_POST["add"]);   //-----------> Affiche le table des données post qui sont ajouter au panier
-             var_dump($list_products);   //-----------> Affiche le table des données produits
+            // var_dump($list_products);   //-----------> Affiche le table des données produits
 
+            function basketTotal($qt){
+                $total = 0;
+                global $list_products;
+//                var_dump($list_products);
+//                var_dump($qt);
+//                foreach ($qt AS $index=>$value){
+//                    $total = (int)$list_products[$_POST['add'][$index]]['prix'] * $_POST['qt'][$index];
+//                }
+//
+                for($i=0; $i < count($qt); $i++){
+                    $total += (int)$list_products[$_POST['add'][$i]]['prix'] * $_POST['qt'][$i];
+                }
+                echo "Le montant total de votre panier est de " . $total;
+            }
 
             if (isset($_POST['add'])) {
                 ?>
@@ -47,7 +63,7 @@
                                             <h5 class="card-title"><?= $list_products[$_POST['add'][$i]]['nom'] ?></h5>
                                             <h5 class="card-title"><?= (int)$list_products[$_POST['add'][$i]]['prix'] * $_POST['qt'][$i] . '€' ?></h5>
                                             <input type="checkbox" hidden checked name="add[]" value="<?= $_POST['add'][$i] ?>">
-                                            <br><label for="">Ajouter la quantité</label><input type="number" name="qt[]" value="<?= $_POST[['qt'][$i]] ?>"><br>
+                                            <br><label for="">Ajouter la quantité</label><input type="number" name="qt[]" value="<?= $_POST['qt'][$i] ?>"><br>
                                             <?= 'Vous avez une quantité de '. $_POST['qt'][$i] .' produits.<br>'; ?>
                                         </div>
                                     </div>
@@ -62,24 +78,20 @@
                         </div>
                     </div>
                     <?php
-                    for ($i = 0; $i < count($_POST['add']); $i++) {
-                        //var_dump($list_products[$_POST['add'][$i]]['prix']);
-                        basketTotal($_POST[['qt'][$i]], $list_products[$_POST['add'][$i]]['prix']);
-                    }
+//                    var_dump($_POST['add']);
+//                    var_dump($_POST['qt']);
+                        ?><div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <button class="btn btn-primary" ><?= basketTotal($_POST['qt']) . ' €';?></button>
+                        </div>
+                    </div>
+                        <?php
+
                      ?>
                 </form>
             <?php }
 
-            function basketTotal($quantite, $price){
-                $total = 0;
-                var_dump($quantite);
-                var_dump($price);
-                for($i=0; $i < count($quantite); $i++){
-                    $total += $quantite[$i] * $price[$i];
-                    echo "Le montant total de votre panier est de " . $total;
-                }
-                return $total;
-            }
+
 
 
 
